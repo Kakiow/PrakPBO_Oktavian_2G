@@ -3,7 +3,7 @@
 | NIM |  254107020239|
 | Nama |  Oktavian Kusuma Alghifari |
 | Kelas | TI - 2G |
-| Repository | [link] (https://github.com/Kakiow/PrakAlgoritma.git) |
+| Repository | [link] (https://github.com/Kakiow/PrakPBO_Oktavian_2G.git) |
 
 # Labs #1 Pengantar Konsep Pemrograman Berorientasi Objek
 
