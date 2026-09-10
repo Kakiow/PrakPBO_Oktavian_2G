@@ -13,5 +13,9 @@ public class Main {
 
         Student s = new Student("Nadia", "S001", 3.8);
         System.out.println(s.describe());
+
+        Circle lingkaran1 = new Circle(5);
+        System.out.println("Luas: " + lingkaran1.area());
+        System.out.println("Keliling: " + lingkaran1.circumference());
     }
 }
