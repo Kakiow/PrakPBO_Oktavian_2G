@@ -65,6 +65,21 @@ a. Foto 4 buah objek di sekitar kalian dengan 2 objek di antaranya merupakan obj
 mengandung konsep pewarisan (inheritance), contoh: kulkas, kursi, meja ruang tamu, meja
 belajar sehingga diketahui meja ruang tamu dan meja belajar mewarisi objek meja!
 
+Jawab:
+Penggaris
+![Penggaris](ss/Penggaris.jpg)
+Dompet
+![Dompet](ss/Dompet.jpg)
+Kompor
+![Kompor](ss/kompor.jpg)
+Kompor Tanam
+![Kompor Tanam](ss/KomporTanam.jpg)
+Televisi
+![Televisi](ss/Televisi.jpg)
+SmartTv
+![SmartTv](ss/SmartTv.jpg)
+
+
 b. Lakukan pengamatan terhadap 4 objek tersebut untuk menentukan atribut dan methodnya!
 Jawab:
 - Penggaris, atribut nya merk dan panjang, method nya adalah Merk, Panjang, print
@@ -401,6 +416,22 @@ public class Demo {
 
     }
 }
+```
+```
+Merk: butterfly
+Panjang penggaris: 30
+Merk: eiger
+Bahan: kain
+Merk: rinnai
+Jumlah tungku: 2
+Merk: catristo
+Jumlah tungku: 2
+Material kompor: kaca
+Merk: sharp
+Ukuran layar: 32
+Merk: samsung
+Ukuran layar: 40
+Sistem tv: tizen
 ```
 h. Instansiasikan satu buah objek untuk setiap class!
 Jawab:
