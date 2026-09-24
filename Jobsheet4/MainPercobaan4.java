@@ -6,5 +6,8 @@ public class MainPercobaan4 {
         Gerbong gerbong = new Gerbong("A", 10);
         gerbong.setPenumpang(p, 1);
         System.out.println(gerbong.info());
+        Penumpang budi = new Penumpang("234", "budi");
+        gerbong.setPenumpang(budi, 1);
+        System.out.println(gerbong.info());
     }
 }
