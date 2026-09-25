@@ -9,6 +9,11 @@ public class Mobil2 {
         this.mesin = new Mesin();
     }
 
+    public Mobil2(String merek, Mesin mesin) {
+        this.merek = merek;
+        this.mesin = mesin;
+    }
+
     public void tampilkanInfo() {
         System.out.println("Mobil: " + merek);
         System.out.println("Mesin: " + mesin.getTipe());
