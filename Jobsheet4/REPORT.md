@@ -279,3 +279,96 @@ public void setPenumpang(Penumpang penumpang) {
         this.penumpang = penumpang;
     }
 ```
+
+## Checkpoint 1 Percobaan 5
+```
+Mobil: Avanza
+Mesin: 4-silinder
+```
+
+## Pertanyaan Percobaan 5
+1. Pada class Mobil, baris manakah yang menunjukkan bahwa Mesin adalah bagian yang “dimiliki
+secara eksklusif” oleh Mobil (bukan sekadar “dipinjam”)?
+Jawab:
+```
+public Mobil2(String merek) {
+        this.merek = merek;
+        this.mesin = new Mesin();
+    }
+```
+2. Apa yang terjadi secara desain jika ditambahkan method setMesin(Mesin mesin) pada class
+Mobil? Apakah relasi ini akan tetap menjadi Composition? Jelaskan.
+Jawab:
+Tidak menjadi composition karena object mesin tidak lagi dimiliki secara eksklusif oleh class mobil,
+sehingga object mesin bisa di ubah dari luar class mobil
+3. Bandingkan dengan Percobaan 1 (Laptop-Processor): sebutkan satu perbedaan baris kode yang
+membuat salah satunya Aggregation dan yang lain Composition.
+Jawab:
+Baris kode yang membedakan Aggregation dan composition adalah di class mobil:
+```
+public Mobil2(String merek) {
+        this.merek = merek;
+        this.mesin = new Mesin();
+    }
+```
+di class laptop:
+```
+public Laptop(String merk, Processor proc) {
+        this.merk = merk;
+        this.proc = proc;
+    }
+```
+4. Jika objek mobil di MainPercobaan5 di-set null setelah tampilkanInfo() dipanggil, apa yang
+terjadi pada objek Mesin miliknya? Bandingkan dengan nasib objek Processor pada Percobaan 1
+seandainya objek Laptop-nya dihapus, apakah Processor tersebut masih bisa “diselamatkan” oleh
+kode lain? Kenapa Mesin tidak bisa?
+Jawab:
+Jika object mobil di set null maka object mesin juga akan ikut hilang karena object mesin dibuat langsung di dalam class mobil, jika nasib object processor tidak akan hilang karena object processor tidak dibuat di dalam class laptop
+5. Coba (secara terpisah, boleh di file/package percobaan sendiri) tambahkan constructor kedua pada
+Mobil yang menerima parameter Mesin, mirip pola Percobaan 1: public Mobil(String merek,
+Mesin mesin) { this.merek = merek; this.mesin = mesin; }. Kalau constructor ini yang
+dipakai, apakah Mobil-Mesin berubah menjadi Aggregation? Jelaskan alasannya.
+Jawab:
+Mobil-mesin akan menjadi Aggregation karena object mesin tidak lagi dibuat di dalam class mobil, sehingga object mesin akan menjadi class sendiri
+
+## Checkpoint 1 Percobaan 6
+```
+Thinkpad mengirim dokumen ke printer...
+[Epson L3110] Mencetak Laporan.pdf.....
+[Epson L3110] Selesai.
+```
+
+## Pertanyaan Percobaan 6
+1. Apakah class Laptop pada percobaan ini memiliki atribut bertipe Printer? Bandingkan dengan
+Percobaan 1, di mana Processor disimpan sebagai atribut Laptop.
+Jawab:
+Class laptop tidak punya atribut printer
+2. Setelah method cetakDokumen() selesai dijalankan, apakah Laptop masih menyimpan referensi ke
+objek printer yang tadi dipakai? Jelaskan berdasarkan baris kode class Laptop.
+Jawab:
+Laptop tidak lagi menyimpan referensi ke object printer, referensi object printer ada selama method digunakan, setelah method selesai referensi nya juga ikut hilang
+3. Mengapa relasi Laptop-Printer pada percobaan ini disebut Dependency (uses-a), bukan Aggregation,
+meskipun sama-sama melibatkan dua objek yang saling berinteraksi?
+Jawab:
+Karena class laptop hanya menyimpan referensi dari object printer
+4. Coba ubah kode Laptop supaya Printer disimpan sebagai atribut (mis. private Printer
+printerDefault, diisi lewat constructor atau setter, lalu dipakai kembali di cetakDokumen()
+tanpa parameter Printer). Apakah relasi ini sekarang berubah dari Dependency menjadi
+Aggregation? Jelaskan.
+Jawab:
+```
+public class Laptop2 {
+    private String merk;
+    private Printer printer;
+
+    public Laptop2(String merk, Printer printer) {
+        this.merk = merk;
+        this.printer = printer;
+    }
+
+    public void cetakDokumen(String namaFile) {
+        System.out.println(merk + " mengirim dokumen ke printer...");
+        printer.cetak(namaFile);
+    }
+```
+Relasi nya berubah dari Dependency menjadi Aggregation karena printer di simpan jadi atribut di class laptop
