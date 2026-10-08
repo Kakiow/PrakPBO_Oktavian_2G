@@ -13,7 +13,7 @@ public class MainTugas3 {
 
         System.out.println("Jackal special attack to quistis, "
                 + "quistis cast magic to jackal,");
-        System.out.println("esther cure jackal, quistis attack esther...");
+        System.out.println("esther cure jackal,  quistis attack esther...");
         jackal.specialAttack(quistis);
         quistis.magic(jackal);
         esther.cure(jackal);
