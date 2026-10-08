@@ -5,7 +5,7 @@
 | Kelas | TI - 2G |
 | Repository | [link] (https://github.com/Kakiow/PrakPBO_Oktavian_2G.git) |
 
-# Labs #3 Enkapsulasi Pada Pemrograman Berorientasi Objek
+# Labs #6 Inheritance (Pewarisan)
 
 ## Checkpoint 1 Percobaan 1
 
@@ -340,5 +340,158 @@ Siti:2700000
 ```
 
 ## Tugas 2
+```
+package Jobsheet6;
 
+public class Televisi {
+    public String merek;
+    public int jumlahChannel;
+    private int channelAktif;
 
+    public Televisi(String merek, int jumlahChannel) {
+        this.merek = merek;
+        this.jumlahChannel = jumlahChannel;
+        this.channelAktif = 1;
+    }
+
+    public void pindahChannel(int channel) {
+        if (channel >= 1 && channel <= jumlahChannel) {
+            this.channelAktif = channel;
+        }
+    }
+
+    public int getChannelAktif() {
+        return channelAktif;
+    }
+}
+```
+```
+package Jobsheet6;
+
+public class TelevisiModern extends Televisi {
+    private String modeTampilan;
+    private String dvd;
+
+    public TelevisiModern(String merek, int jumlahChannel) {
+        super(merek, jumlahChannel);
+        this.dvd = "kosong";
+    }
+
+    public void gantiModusTampilan(String mode) {
+        this.modeTampilan = mode;
+    }
+
+    public void masukkanDVD(String judul) {
+        this.dvd = judul;
+    }
+
+    public void mainkanDVD() {
+        System.out.println("Sedang memainkan DVD: " + dvd);
+    }
+}
+```
+```
+Channel aktif: 1
+Channel aktif sekarang: 20
+Sedang memainkan DVD: kosong
+Sedang memainkan DVD: The Matrix
+```
+
+## Tugas 3
+```
+package Jobsheet6;
+
+public class Character {
+    protected String name;
+    protected int level;
+    protected int health;
+
+    public Character(String name, int level, int health) {
+        this.name = name;
+        this.level = level;
+        this.health = health;
+    }
+
+    public void attack(Character target) {
+        target.health -= 10;
+    }
+
+    public void showStatus() {
+        System.out.println("Name: " + name + "Level: " + level + "Health: " + health);
+    }
+}
+```
+```
+package Jobsheet6;
+
+public class Angel extends Character {
+    protected int potion;
+
+    public Angel(String name, int level, int health, int potion) {
+        super(name, level, health);
+        this.potion = potion;
+    }
+
+    public void cure(Character target) {
+        target.health = 100;
+        this.potion -= 1;
+    }
+}
+```
+```
+package Jobsheet6;
+
+public class Human extends Character {
+    protected int strength;
+
+    public Human(String name, int level, int health, int strength) {
+        super(name, level, health);
+        this.strength = strength;
+    }
+
+    public void specialAttack(Character target) {
+        target.health -= (10 + strength);
+    }
+}
+```
+```
+package Jobsheet6;
+
+public class Wizard extends Character {
+    protected int spell;
+
+    public Wizard(String name, int level, int health, int spell) {
+        super(name, level, health);
+        this.spell = spell;
+    }
+
+    public void magic(Character target) {
+        target.health -= 50;
+        this.spell -= 1;
+    }
+}
+```
+```
+Begin game...
+Name: EstherLevel: 10Health: 100
+Name: JackalLevel: 13Health: 100
+Name: QuistisLevel: 20Health: 100
+Jackal special attack to quistis, quistis cast magic to jackal,
+esther cure jackal, quistis attack esther...
+Name: EstherLevel: 10Health: 90
+Name: JackalLevel: 13Health: 100
+Name: QuistisLevel: 20Health: 83
+```
+
+## Tugas 4
+1. Jelaskan dengan bahasa Anda sendiri perbedaan hubungan is-a (inheritance) dan has-a
+(aggregation/composition), lalu beri satu contoh masing-masing dari jobsheet ini.
+Jawab:
+Is-a adalah sebuah hubungan dimana ada sebuah class untuk bentuk umum dan ada class untuk bentuk khusus
+contoh nya adalah class televisimodern dan class televisi, hubungan has-a adalah sebuah hubungan dimana
+sebuah class menjadi atribut dari class lain contoh nya adalah class daftarGaji dan class pegawai
+2. Ringkas aturan pewarisan untuk tiga hal berikut dalam 3–5 kalimat: member private,
+member protected, dan konstruktor.
+Jawab:
+Member private hanya bisa di akses dari class nya sendiri, member protected bisa di akses class nya sendiri
+dari package yang sama atau subclass nya, konstruktor superclass akan di jalankan dulu daripada konstruktor subclass
