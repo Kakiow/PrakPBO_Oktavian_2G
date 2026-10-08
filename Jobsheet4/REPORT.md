@@ -5,7 +5,7 @@
 | Kelas | TI - 2G |
 | Repository | [link] (https://github.com/Kakiow/PrakPBO_Oktavian_2G.git) |
 
-# Labs #3 Enkapsulasi Pada Pemrograman Berorientasi Objek
+# Labs #4 Relasi Kelas: Aggregation, Composition, dan Dependency
 
 ## Checkpoint 1 Percobaan 1
 
