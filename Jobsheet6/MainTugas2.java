@@ -9,7 +9,7 @@ public class MainTugas2 {
                 + tv.getChannelAktif());
         tv.gantiModusTampilan("HDMI");
         tv.mainkanDVD();
-        tv.masukkanDVD("The Matrix");
+        tv.masukkanDVD("The Matrix ");
         tv.mainkanDVD();
     }
 }
