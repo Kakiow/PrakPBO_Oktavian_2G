@@ -372,3 +372,142 @@ public class Laptop2 {
     }
 ```
 Relasi nya berubah dari Dependency menjadi Aggregation karena printer di simpan jadi atribut di class laptop
+5. Lengkapi tabel berikut dengan kata-katamu sendiri (boleh dijawab di laporan): untuk masing-masing
+dari Aggregation, Composition, dan Dependency, sebutkan (a) apakah objek part disimpan sebagai
+atribut atau tidak, dan (b) siapa yang memanggil new untuk membuat objek part tersebut.
+Jawab:
+Untuk Aggregation, objek part disimpan jadi atribut dari kelas whole nya, objek part di buat di luar kelas whole nya dan di panggil
+lewat konstruktor. Composition, objek part disimpan jadi atribut dari kelas whole nya dan dibuat langsung di kelas whole nya.
+Dependency, objek part tidak disimpan jadi atribut kelas whole, objek part di buat dari luar kelas whole nya dan di masukkan lewat parameter saja
+
+## Tugas mandiri
+```
+package Jobsheet4;
+
+public class Buku {
+    private String judul;
+    private double harga;
+
+    public Buku(String judul, double harga) {
+        this.judul = judul;
+        this.harga = harga;
+    }
+
+    public String getJudul() {
+        return judul;
+    }
+
+    public double getHarga() {
+        return harga;
+    }
+}
+```
+```
+package Jobsheet4;
+
+public class Pembeli {
+    private String nama;
+    private String alamat;
+
+    public Pembeli(String nama, String alamat) {
+        this.nama = nama;
+        this.alamat = alamat;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+}
+```
+```
+package Jobsheet4;
+
+public class Nota {
+    private double total;
+
+    public Nota(double total) {
+        this.total = total;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+}
+```
+```
+package Jobsheet4;
+
+public class Struk {
+    private String toko;
+
+    public Struk(String toko) {
+        this.toko = toko;
+    }
+
+    public void cetakStruk(String pembeli, String buku, double total) {
+        System.out.println(toko);
+        System.out.println("Pembeli: " + pembeli);
+        System.out.println("Judul buku:" + buku);
+        System.out.println("Total: " + total);
+    }
+}
+```
+```
+package Jobsheet4;
+
+public class Transaksi {
+    private Pembeli pembeli;
+    private Nota nota;
+    private Buku buku;
+
+    public Transaksi(Pembeli pembeli, Buku buku) {
+        this.pembeli = pembeli;
+        this.buku = buku;
+        this.nota = new Nota(buku.getHarga());
+    }
+
+    public void cetak(Struk struk) {
+        struk.cetakStruk(pembeli.getNama(), buku.getJudul(), nota.getTotal());
+    }
+
+    public void info() {
+        System.out.println("Pembeli: " + pembeli.getNama());
+        System.out.println("Alamat: " + pembeli.getAlamat());
+        System.out.println("Judul buku: " + buku.getJudul());
+        System.out.println("Total: " + nota.getTotal());
+    }
+}
+```
+```
+package Jobsheet4;
+
+public class MainTugas {
+    public static void main(String[] args) {
+        Pembeli pembeli = new Pembeli("okta", "test");
+        Buku buku = new Buku("test", 7000);
+        Transaksi transaksi = new Transaksi(pembeli, buku);
+        transaksi.info();
+        Struk struk = new Struk("toko buku");
+        transaksi.cetak(struk);
+    }
+}
+```
+```
+Pembeli: okta
+Alamat: test
+Judul buku: test
+Total: 7000.0
+toko buku
+Pembeli: okta
+Judul buku:test
+Total: 7000.0
+```
+2. Jawab singkat (3-5 kalimat): dalam merancang sistem barumu sendiri, bagaimana kita memutuskan
+sebuah relasi antar class seharusnya Aggregation, Composition, atau Dependency? Sebutkan
+pertanyaan kunci yang kita ajukan ke diri sendiri saat memutuskan.
+Jawab:
+Apakah objek tersebut perlu di simpan jadi atribut atau tidak, apakah objek akan sering digunakan atau tidak, apakah objek part nya perlu jadi satu dengan objek whole nya atau tidak
