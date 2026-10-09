@@ -9,7 +9,6 @@
 
 ## Checkpoint 1 Percobaan 1
 
-kode berada di file Motor.java, MotorDemo.java  berikut adalah output nya
 
 ```
 Merk Laptop = Thinkpad
@@ -18,8 +17,6 @@ Cache Memory = 3.00
 ```
 
 ## Checkpoint 2 Percobaan 1
-
-kode berada di file Motor.java, MotorDemo.java  berikut adalah output nya
 
 ```
 Merk Laptop = Thinkpad
@@ -99,7 +96,6 @@ jika class laptop hilang maka processor juga ikut hilang
 
 ## Checkpoint 1 Percobaan 2
 
-kode berada di file Anggota.java, KoperasiDemo.java  berikut adalah output nya
 
 ```
 Biaya Total = 1100000
