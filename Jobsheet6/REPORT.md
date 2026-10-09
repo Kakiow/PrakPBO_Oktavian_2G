@@ -9,7 +9,6 @@
 
 ## Checkpoint 1 Percobaan 1
 
-kode berada di file Motor.java, MotorDemo.java  berikut adalah output nya
 
 ```
 nilai x: 20
@@ -50,8 +49,6 @@ Jawab:
 Akan terjadi error karena java tidak bisa multiple inheritence
 
 ## Checkpoint 1 Percobaan 2
-
-kode berada di file Motor.java, MotorDemo.java  berikut adalah output nya
 
 ```
 nilai x: 20
@@ -94,8 +91,6 @@ atribut nya karena beda package
  
 
 ## Checkpoint 1 Percobaan 3
-
-kode berada di file Anggota.java, KoperasiDemo.java  berikut adalah output nya
 
 ```
 Volume Tabung adalah: 942.0
